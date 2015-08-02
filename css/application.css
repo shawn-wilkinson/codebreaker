@@ -1,0 +1,186 @@
+body{
+  background-image:url('../congruent_pentagon/congruent_pentagon.png');
+}
+
+#container{
+  background-color: #FFFF9D;
+  box-shadow: 2px 2px 2px gray;
+  border-radius:5px;
+  height: 900px;
+  width: 550px;
+  margin: 30px auto 0px auto;
+}
+
+#container h1{
+  color:#2F2933;
+  font-family: sans-serif;
+  border: 1px solid blue;
+  display:inline-block;
+  margin: auto;
+}
+
+#header{
+  width:99%;
+
+  border: 1px solid lime;
+  height:100px;
+  margin-top:0px;
+}
+
+#top-buttons{
+  display:inline-block;
+  width:140px;
+  float:right;
+  height:95px;
+  margin-top:0px;
+  padding-top:10px;
+}
+
+.button{
+  background-color:#FF6138;
+  box-shadow:1px 1px 1px gray;
+  height:40%;
+  margin:2%;
+  width:95%;
+  text-align: center;
+  font-family:sans-serif;
+  color:#35203B;
+  text-shadow:#79BD8F;
+  border-radius:5px;
+}
+
+#guess-board{
+  clear:both;
+  height:650px;
+  border:1px solid red;
+  width: 500px;
+  margin:auto;
+}
+
+.row{
+  border:1px solid orange;
+  display: block;
+  width:500px;
+  height:60px;
+}
+
+.guess{
+  height:55px;
+  width:350px;
+  margin-left:30px;
+  float:left;
+  display: inline-block;
+  border:1px solid green;
+}
+
+.result{
+  border:1px solid lime;
+
+  display: inline-block;
+  width:45px;
+  height:45px;
+  margin-right:10px;
+  float:right;
+}
+
+#make-guess{
+  width:500px;
+  margin:auto;
+  height:100px;
+  border:1px solid blue;
+}
+
+#guess-input-board{
+  background-color:#B3FFFF;
+  width:270px;
+  height:60px;
+  display:inline-block;
+  border-radius:5px;
+  box-shadow:1px 1px 1px gray;
+  text-align:center;
+}
+
+.peg-input{
+  background-color:white;
+  border: 2px solid gray;
+  width:35px;
+  height:35px;
+  border-radius:35px;
+  margin:7px auto 7px auto;
+  display: inline-block;
+  vertical-align:center;
+  border:1px solid black;
+}
+
+#guess-options{
+  width:200px;
+  height:100px;
+  float:right;
+  display:inline-block;
+  border:1px solid lime;
+}
+
+#make-guess-button{
+  background-color:#1695A3;
+  width:100px;
+  height:25px;
+  margin-top:5px;
+  border-radius:5px;
+  display:inline-block;
+  box-shadow: 3px 3px 3px gray;
+  text-align:center;
+  font-family: sans-serif;
+  color:#2F2933;
+  padding-top:5px;
+}
+
+.color-option{
+  width:35px;
+  height:35px;
+  border-radius:35px;
+  margin:3px;
+  display: inline-block;
+  box-shadow: 3px 3px 3px gray;
+}
+
+#color-0{
+  background-color:#88A825;
+}
+
+#color-1{
+  background-color:#35203B;
+}
+
+#color-2{
+  background-color:#EA2E49;
+}
+
+#color-3{
+  background-color:#DB4105;
+}
+
+#color-4{
+  background-color:#ED8C2B;
+}
+
+#color-5{
+  background-color:#1695A3;
+}
+
+#color-6{
+  background-color:#8A0917;
+}
+
+#color-7{
+  background-color:#00261C;
+}
+
+
+
+
+
+
+
+
+
+
