@@ -1,13 +1,9 @@
 $(document).ready(function() {
 
-  $("#display-instructions").on("click", function(event){
-    gameView.displayInstructions();
-  });
 
-  $("#start-new-game").on("click", function(event){
-    gameView.clearBoard();
-    game.newGame();
-  });
+gameView = new GameView();
+game = new Game(gameView);
+
 
 
   var currentColor = {}
@@ -28,8 +24,20 @@ $(".peg-input").droppable({
     }
   });
 
+
+
+  $("#display-instructions").on("click", function(event){
+    gameView.displayInstructions();
+  });
+
+  $("#start-new-game").on("click", function(event){
+    gameView.clearBoard();
+    game.newGame();
+  });
+
+
 $("#make-guess-button").on("click",function(event){
-  alert("GUESS MADE!");
+  game.makeGuess();
 });
 
 

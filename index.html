@@ -2,20 +2,21 @@
 <html lang="en">
 <head>
   <link rel="stylesheet" href="css/application.css">
-
+  <link href='http://fonts.googleapis.com/css?family=Rubik+Mono+One' rel='stylesheet' type='text/css'>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <script src="js/view.js"></script>
   <script src="js/game.js"></script>
   <script src="js/application.js"></script>
 
 
-  <title>Mastermind!</title>
+  <title>Code Breaker!</title>
 </head>
 <body>
   <div id="container">
     <div id="header">
-        <h1>Mastermind</h1>
+        <h1>Code Breaker</h1>
         <div id="top-buttons">
           <div class="button" id="display-instructions">How To Play</div>
           <div class="button" id="start-new-game">New Game</div>
@@ -24,44 +25,94 @@
     <div id="guess-board">
       <div id="rows">
         <div class="row">
-          <div class="guess" id="guess-10"></div>
+          <div class="guess" id="guess-10">
+            <div class="peg-input" id="input-1"></div>
+            <div class="peg-input" id="input-2"></div>
+            <div class="peg-input" id="input-3"></div>
+            <div class="peg-input" id="input-4"></div>
+          </div>
           <div class="result" id="result-10"></div>
         </div>
         <div class="row">
-          <div class="guess" id="guess-10"></div>
-          <div class="result" id="result-10"></div>
+          <div class="guess" id="guess-9">
+            <div class="peg-input" id="input-1"></div>
+            <div class="peg-input" id="input-2"></div>
+            <div class="peg-input" id="input-3"></div>
+            <div class="peg-input" id="input-4"></div>
+          </div>
+          <div class="result" id="result-9"></div>
         </div>
         <div class="row">
-          <div class="guess" id="guess-10"></div>
-          <div class="result" id="result-10"></div>
+          <div class="guess" id="guess-8">
+            <div class="peg-input" id="input-1"></div>
+            <div class="peg-input" id="input-2"></div>
+            <div class="peg-input" id="input-3"></div>
+            <div class="peg-input" id="input-4"></div>
+          </div>
+          <div class="result" id="result-8"></div>
         </div>
         <div class="row">
-          <div class="guess" id="guess-10"></div>
-          <div class="result" id="result-10"></div>
+          <div class="guess" id="guess-7">
+            <div class="peg-input" id="input-1"></div>
+            <div class="peg-input" id="input-2"></div>
+            <div class="peg-input" id="input-3"></div>
+            <div class="peg-input" id="input-4"></div>
+          </div>
+          <div class="result" id="result-7"></div>
         </div>
         <div class="row">
-          <div class="guess" id="guess-10"></div>
-          <div class="result" id="result-10"></div>
+          <div class="guess" id="guess-6">
+            <div class="peg-input" id="input-1"></div>
+            <div class="peg-input" id="input-2"></div>
+            <div class="peg-input" id="input-3"></div>
+            <div class="peg-input" id="input-4"></div>
+          </div>
+          <div class="result" id="result-6"></div>
         </div>
         <div class="row">
-          <div class="guess" id="guess-10"></div>
-          <div class="result" id="result-10"></div>
+          <div class="guess" id="guess-5">
+            <div class="peg-input" id="input-1"></div>
+            <div class="peg-input" id="input-2"></div>
+            <div class="peg-input" id="input-3"></div>
+            <div class="peg-input" id="input-4"></div>
+          </div>
+          <div class="result" id="result-5"></div>
         </div>
         <div class="row">
-          <div class="guess" id="guess-10"></div>
-          <div class="result" id="result-10"></div>
+          <div class="guess" id="guess-4">
+            <div class="peg-input" id="input-1"></div>
+            <div class="peg-input" id="input-2"></div>
+            <div class="peg-input" id="input-3"></div>
+            <div class="peg-input" id="input-4"></div>
+          </div>
+          <div class="result" id="result-4"></div>
         </div>
         <div class="row">
-          <div class="guess" id="guess-10"></div>
-          <div class="result" id="result-10"></div>
+          <div class="guess" id="guess-3">
+            <div class="peg-input" id="input-1"></div>
+            <div class="peg-input" id="input-2"></div>
+            <div class="peg-input" id="input-3"></div>
+            <div class="peg-input" id="input-4"></div>
+          </div>
+          <div class="result" id="result-3"></div>
         </div>
         <div class="row">
-          <div class="guess" id="guess-10"></div>
-          <div class="result" id="result-10"></div>
+          <div class="guess" id="guess-2">
+            <div class="peg-input" id="input-1"></div>
+            <div class="peg-input" id="input-2"></div>
+            <div class="peg-input" id="input-3"></div>
+            <div class="peg-input" id="input-4"></div>
+          </div>
+          <div class="result" id="result-2"></div>
         </div>
         <div class="row">
-          <div class="guess" id="guess-10"></div>
-          <div class="result" id="result-10"></div>
+          <div class="guess" id="guess-1">
+            <div class="peg-input" id="input-1"></div>
+            <div class="peg-input" id="input-2"></div>
+            <div class="peg-input" id="input-3"></div>
+            <div class="peg-input" id="input-4"></div>
+          </div>
+          <div class="result" id="result-1"></div>
         </div>
       </div>
     </div>
@@ -74,16 +125,16 @@
           <div class="peg-input" id="input-4"></div>
         </div>
         <div id="guess-options">
-          <div class="color-option" id="color-0"></div>
-          <div class="color-option" id="color-1"></div>
-          <div class="color-option" id="color-2"></div>
-          <div class="color-option" id="color-3"></div>
-          <div class="color-option" id="color-4"></div>
-          <div class="color-option" id="color-5"></div>
-          <div class="color-option" id="color-6"></div>
-          <div class="color-option" id="color-7"></div>
+          <div class="color-option" name="0" id="color-0"></div>
+          <div class="color-option" name="1" id="color-1"></div>
+          <div class="color-option" name="2" id="color-2"></div>
+          <div class="color-option" name="3" id="color-3"></div>
+          <div class="color-option" name="4" id="color-4"></div>
+          <div class="color-option" name="5" id="color-5"></div>
+          <div class="color-option" name="6" id="color-6"></div>
+          <div class="color-option" name="7" id="color-7"></div>
         </div>
-        <div id="make-guess-button"><strong>Make Guess</strong></div>
+        <div id="make-guess-button">Make Guess</div>
       </div>
 
 
