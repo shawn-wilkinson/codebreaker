@@ -1,5 +1,6 @@
 
 var GameView = function(game){
+  this.colors = ["#6AF25D","#35203B","#EA2E49","#DB4105","#FFF71D","#1695A3","#8A0917","#00261C"]
 }
 
 GameView.prototype.displayInstructions = function(){
@@ -10,6 +11,14 @@ GameView.prototype.clearBoard = function(){
   //FILL THIS OUT - CLEAN OUT THE PREVIOUS GAME
 };
 
-GameView.prototype.displayGuess = function(guess){
+GameView.prototype.displayGuess = function(guess,guessNum){
+  var guessField = $("#guess-"+guessNum)
+  for(i=0;i<4;i++){
+    console.log(guess[i])
+    guessField.find("#peg-" + (i+1)).css("background-color",this.returnColor(guess[i]));
+  };
+};
 
+GameView.prototype.returnColor = function(number){
+  return this.colors[number]
 }

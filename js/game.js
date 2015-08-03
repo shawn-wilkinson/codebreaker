@@ -26,8 +26,9 @@ Game.prototype.setCode=function(){
 };
 
 Game.prototype.makeGuess=function(){
+  this.timesGuessed ++;
   var guess = this.obtainGuess();
-  this.view.displayGuess(guess);
+  this.view.displayGuess(guess,this.timesGuessed);
   var result = this.checkGuess(guess);
   // check result against code
   // update guessed colors and results accordingly;
