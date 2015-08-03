@@ -38,6 +38,7 @@ $(".peg-input").droppable({
 
 $("#make-guess-button").on("click",function(event){
   game.makeGuess();
+  gameView.clearInputArea();
 });
 
 

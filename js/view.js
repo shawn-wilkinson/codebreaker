@@ -9,6 +9,8 @@ GameView.prototype.displayInstructions = function(){
 
 GameView.prototype.clearBoard = function(){
   //FILL THIS OUT - CLEAN OUT THE PREVIOUS GAME
+  this.clearInputArea();
+  this.clearPegBoard();
 };
 
 GameView.prototype.displayGuess = function(guess,guessNum){
@@ -22,3 +24,11 @@ GameView.prototype.displayGuess = function(guess,guessNum){
 GameView.prototype.returnColor = function(number){
   return this.colors[number]
 }
+
+GameView.prototype.clearInputArea = function(){
+  $("#guess-input-board .color-option").remove();
+};
+
+GameView.prototype.clearPegBoard = function(){
+  $("#guess-board .peg-input").css("background-color","#E1FFFD");
+};
