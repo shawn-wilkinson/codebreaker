@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
 
-gameView = new GameView();
+gameView = new GameView;
 game = new Game(gameView);
 
 

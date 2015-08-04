@@ -24,19 +24,18 @@ Game.prototype.makeGuess=function(){
   this.timesGuessed ++;
   var guess = this.obtainGuess();
   this.view.displayGuess(guess,this.timesGuessed);
-  var result = this.checkGuess(guess);
-  for(i=0;i < result[0];i++)
+  var matches = this.determineMatches(guess);
+  this.view.updateResultPegs(matches,this.timesGuessed);
 
+
+    //var result = this.checkGuess(guess);
+    //DETERMINE NEXT STEP METHOD (WON/NEXT ROUND/GAME OVER)
   // check result against code
   // update guessed colors and results accordingly;
   // Check if they won, the game is over, or they still play
   //
 
-
-
-
-
-}
+};
 
 
 Game.prototype.obtainGuess=function(){
@@ -48,7 +47,6 @@ var num1 = $("#input-1").find(".color-option").attr("name");
 };
 
 Game.prototype.checkGuess=function(guess){
-  var pegthis.determineMatches(guess);
   if (guess[0] == this.code[0] && guess[1] == this.code[1] && guess[2] == this.code[2] && guess[3] == this.code[3]){
     alert("You Won! I'm soooo proud!");
   };
@@ -62,6 +60,7 @@ Game.prototype.determineMatches=function(guess){
     if(this.code[i] === guess[i]){directMatches ++ };
   };
   console.log(directMatches);
+  var colorMatches = rawColorMatches - directMatches;
   return[directMatches,colorMatches]
 };
 
