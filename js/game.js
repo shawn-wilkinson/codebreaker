@@ -11,45 +11,36 @@ var Game = function(view){
 
 
 Game.prototype.newGame = function(){
- game.setCode();
- console.log("HEYY");
- console.log(this.code);
+ this.setCode();
  this.timesGuessed = 0;
 };
 
 Game.prototype.setCode=function(){
   this.code = [randomNumber().toString(),randomNumber().toString(),randomNumber().toString(),randomNumber().toString()];
-  console.log(this.code);
-};
-
-Game.prototype.makeGuess=function(){
-  this.timesGuessed ++;
-  var guess = this.obtainGuess();
-  this.view.displayGuess(guess,this.timesGuessed);
-  var matches = this.determineMatches(guess);
-  this.view.updateResultPegs(matches,this.timesGuessed);
-  this.determineRoundResult(guess);
-
-    //var result = this.checkGuess(guess);
-    //DETERMINE NEXT STEP METHOD (WON/NEXT ROUND/GAME OVER)
-  // check result against code
-  // update guessed colors and results accordingly;
-  // Check if they won, the game is over, or they still play
-  //
-
 };
 
 Game.prototype.determineRoundResult = function(guess){
   var guess = guess;
-  console.log(guess);
-  console.log(this.code);
-  this.checkGuess(guess);
-  if (guess == this.code){
+  // this.checkGuess(guess);
+  if (guess[0] == this.code[0] && guess[1] == this.code[1] && guess[2] == this.code[2] && guess[3] == this.code[3]){
     this.view.gameWon();
   } else if (this.timesGuessed == 10){
     this.view.gameOver();
   };
 };
+
+
+Game.prototype.makeGuess=function(){
+  this.timesGuessed ++;
+  var guess = this.obtainGuess();
+
+  this.view.displayGuess(guess,this.timesGuessed);
+  var matches = this.determineMatches(guess);
+  this.view.updateResultPegs(matches,this.timesGuessed);
+  this.determineRoundResult(guess);
+};
+
+
 
 Game.prototype.obtainGuess=function(){
 var num1 = $("#input-1").find(".color-option").attr("name");
@@ -59,12 +50,6 @@ var num1 = $("#input-1").find(".color-option").attr("name");
   return [num1,num2,num3,num4];
 };
 
-Game.prototype.checkGuess=function(guess){
-  if (guess[0] == this.code[0] && guess[1] == this.code[1] && guess[2] == this.code[2] && guess[3] == this.code[3]){
-    alert("You Won! I'm soooo proud!");
-  };
-
-};
 
 Game.prototype.determineMatches=function(guess){
   var guess = guess;
@@ -82,13 +67,23 @@ Game.prototype.countDirectMatches = function(guess){
     return directMatches
 };
 
+//BUGGY - MATH ISSUE need to account for too many raw color matches
 Game.prototype.countRawColorMatches = function(guess){
+  var guess = guess;
+  var tempCode = this.code.slice(0);
   var rawColorMatches = 0;
+  console.log(guess)
+  console.log(this.code);
   for(cNum=0;cNum<4;cNum++){
     for(gNum =0;gNum<4;gNum++){
-      if(this.code[cNum] === guess[gNum]){
+      console.log("GUESS: " + guess);
+      console.log("CODE: " + tempCode);
+      console.log( tempCode[cNum] + " " + guess[gNum]);
+      if(tempCode[cNum] == guess[gNum]){
         rawColorMatches ++;
-        guess[gNum] = null;
+        tempCode[cNum] = null;
+        console.log("MATCH!!!");
+        console.log("guess" + guess[gNum]);
       };
     };
   };
