@@ -26,6 +26,17 @@ body{
   margin-top:0px;
 }
 
+.about{
+  color:#2F2933;
+  font-size:10px;
+  font-family: 'Rubik Mono One', sans-serif;
+  margin-top:40px;
+}
+
+.about a{
+  color:#2F2933;
+}
+
 #top-buttons{
   display:inline-block;
   width:140px;
@@ -126,7 +137,18 @@ body{
   display: inline-block;
   vertical-align:center;
   border:1px solid black;
+}
 
+.display-peg{
+  background-color:#E1FFFD;
+  border: 2px solid gray;
+  width:35px;
+  height:35px;
+  border-radius:35px;
+  margin:7px auto 7px auto;
+  display: inline-block;
+  vertical-align:center;
+  border:1px solid black;
 }
 
 #guess-options{

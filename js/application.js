@@ -1,10 +1,6 @@
 $(document).ready(function() {
-
-
-gameView = new GameView;
-game = new Game(gameView);
-
-
+  gameView = new GameView;
+  game = new Game(gameView);
 
   var currentColor = {}
   $("div .color-option").draggable({
@@ -16,15 +12,13 @@ game = new Game(gameView);
     }
   });
 
-$(".peg-input").droppable({
+  $(".peg-input").droppable({
     accept:".color-option",
     drop: function(ev,ui){
       var selectedItem = ui.draggable.clone();
       $(this).html(selectedItem);
     }
   });
-
-
 
   $("#display-instructions").on("click", function(event){
     gameView.displayInstructions();
@@ -35,17 +29,9 @@ $(".peg-input").droppable({
     game.newGame();
   });
 
-
-$("#make-guess-button").on("click",function(event){
-  game.makeGuess();
-  gameView.clearInputArea();
-});
-
-
-
-
-
-
-
+  $("#make-guess-button").on("click",function(event){
+    game.makeGuess();
+    gameView.clearInputArea();
+  });
 
 });
