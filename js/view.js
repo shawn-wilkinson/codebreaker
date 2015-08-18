@@ -45,7 +45,7 @@ GameView.prototype.clearInputArea = function(){
 };
 
 GameView.prototype.clearPegBoard = function(){
-  $("#guess-board .peg-input").css("background-color","#E1FFFD");
+  $("#guess-board .display-peg").css("background-color","#E1FFFD");
 };
 
 GameView.prototype.clearResultBoard = function(){
